@@ -1,0 +1,147 @@
+
+.nav{
+  background: #333;
+  padding: 0.7rem;
+  display: grid;
+  place-content: center;
+  place-items: center;
+}
+
+.nav > div {
+  margin: 0;
+  padding: 0;
+  font-size: 2.5em;
+  color:whitesmoke;
+  padding: 1rem;
+}
+
+button{
+  background: rgba(255, 255, 255, 0.4);
+  color: white;
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 1.1rem;
+  font-size: 1.6em;
+
+  border: 2px solid rgba(0, 0, 0, 0.445);
+  border-radius: 4px;
+
+  letter-spacing: 2px;
+  cursor: pointer;
+
+  position: relative;
+  overflow: hidden;
+  transition: all .6s;
+  margin-top: 0.5rem;
+}
+
+button.active[data-activity="cycling"] {
+  transition: all .4s;
+  background: #7fa3c0 !important;
+}
+
+button.active[data-activity="cycling"]:hover{
+  box-shadow: 0 0 0.625rem #7fa3c0,
+    0 0 1.25rem #7fa3c0,
+    0 0 2.5rem #7fa3c0;
+  border:none;
+}
+
+button.active[data-activity="running"] {
+  transition: all .4s;
+  background: rgba(161, 103, 103, 0.945) !important;
+}
+
+button.active[data-activity="running"]:hover{
+  box-shadow: 0 0 0.625rem rgb(161, 103, 103),
+    0 0 1.25rem rgb(161, 103, 103),
+    0 0 2.5rem rgb(161, 103, 103);
+  border:none;
+}
+
+button.active[data-activity="swimming"] {
+  transition: all .4s;
+  background: #99c07f !important;
+}
+
+button.active[data-activity="swimming"]:hover{
+  box-shadow: 0 0 0.625rem #99c07f,
+    0 0 1.25rem #99c07f,
+    0 0 2.5rem #99c07f;
+  border:none;
+}
+
+button.active[data-activity="walking"] {
+  transition: all .4s;
+  background: #c981b9!important;
+}
+
+button.active[data-activity="walking"]:hover{
+  box-shadow: 0 0 0.625rem #c981b9,
+    0 0 1.25rem #c981b9,
+    0 0 2.5rem #c981b9;
+  border:none;
+}
+
+form span{
+  color: #00bfa5 !important;
+}
+.x-axis path, .y-axis path,
+.x-axis line, .y-axis line{
+  stroke: #ccc;
+}
+.x-axis text, .y-axis text{
+  fill: #ccc;
+  font-size: 14px;
+}
+
+/*Custome CSS*/
+
+.pane {
+  display: grid;
+  grid-template-areas:
+    "a a a g g"
+    ". f f f .";
+  gap: 2rem;
+  place-items: center;
+  align-content: stretch;
+  padding-top: 5rem;
+  position: relative;
+}
+
+.activity-pane {
+  grid-area: a;
+}
+
+.graph-pane {
+  grid-area: g;
+}
+
+.form-pane {
+  grid-area: f;
+}
+
+.vid {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.vid video {
+  object-fit: fill;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.vid::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height:100%;
+  background: rgba(0, 0, 0, 0.75);
+}
